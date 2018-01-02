@@ -1,7 +1,7 @@
 FROM pfiff45/ipman
-ENTRYPOINT ["/bin/vmrun"]
-RUN wget http://mrc-hollabrunn.at/vmrun.zip
-RUN apt -y install unzip
-RUN unzip vmrun.zip
+RUN apt install git
+RUN git clone http://192.168.0.135:10080/harry/IPMan.git
+RUN cd IPMan
+RUN go build -o vmrun sshSessioner.go prx.go
 RUN chmod +x vmrun
-RUN mv vmrun /bin
+RUN mv vmrun /bin/
