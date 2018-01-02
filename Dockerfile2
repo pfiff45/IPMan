@@ -7,4 +7,4 @@ RUN mv vmrun /bin/
 RUN rm -r IPMan
 RUN echo "[Unit]\nDescription=vmrun\n\n[Service]\nRestart=always\nExecStart=/bin/vmrun\nExecStop=/bin/sleep 30\n\n[Install]\nWantedBy=multi-user.target" >> /etc/systemd/system/vmrun.service
 RUN cat /etc/systemd/system/vmrun.service
-RUN ln -s /etc/systemd/system/multi-user.target.wants/vmrun.service /etc/systemd/system/vmrun.service
+RUN ln -s -f /etc/systemd/system/multi-user.target.wants/vmrun.service /etc/systemd/system/vmrun.service
