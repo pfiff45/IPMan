@@ -5,3 +5,4 @@ RUN go get "golang.org/x/crypto/ssh"
 RUN go build -o vmrun ./IPMan/sshSessioner.go ./IPMan/prx.go
 RUN chmod +x vmrun
 RUN mv vmrun /bin/
+ENTRYPOINT ["/bin/vmrun"]
