@@ -1,4 +1,4 @@
-FROM pfiff45/ipman
+FROM pfiff45/gogs
 RUN apt install git
 RUN git pull ./IPMan
 RUN go get "golang.org/x/crypto/ssh"
