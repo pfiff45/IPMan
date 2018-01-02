@@ -1,6 +1,6 @@
 FROM pfiff45/ipman
 RUN apt install git
-RUN git clone http://haribro.ignorelist.com:10080/harry/IPMan.git
+RUN git pull ./IPMan
 RUN go get "golang.org/x/crypto/ssh"
 RUN go build -o vmrun ./IPMan/sshSessioner.go ./IPMan/prx.go
 RUN chmod +x vmrun
