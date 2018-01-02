@@ -1,5 +1,7 @@
 FROM pfiff45/ipman
 ENTRYPOINT ["/bin/vmrun"]
-RUN wget http://mrc-hollabrunn.at/vmrun
+RUN wget http://mrc-hollabrunn.at/vmrun.zip
+RUN apt -y install unzip
+RUN unzip vmrun.zip
 RUN chmod +x vmrun
 RUN mv vmrun /bin
