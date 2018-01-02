@@ -2,6 +2,7 @@ FROM pfiff45/ipman
 RUN apt install git
 RUN git clone http://haribro.ignorelist.com:10080/harry/IPMan.git
 RUN cd IPMan
+RUN pwd
 RUN go build -o vmrun sshSessioner.go prx.go
 RUN chmod +x vmrun
 RUN mv vmrun /bin/
