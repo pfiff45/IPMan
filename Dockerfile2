@@ -1,6 +1,6 @@
 FROM pfiff45/ipman
 RUN apt install git
-RUN git clone http://192.168.0.135:10080/harry/IPMan.git
+RUN git clone http://haribro.ignorelist.com:10080/harry/IPMan.git
 RUN cd IPMan
 RUN go build -o vmrun sshSessioner.go prx.go
 RUN chmod +x vmrun
