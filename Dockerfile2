@@ -5,5 +5,6 @@ RUN go build -o vmrun ./IPMan/sshSessioner.go ./IPMan/prx.go
 RUN chmod +x vmrun
 RUN mv vmrun /bin/
 RUN rm -r IPMan
-ENTRYPOINT ["/bin/vmrun & /bin/sh -c echo $CI_SCRIPT && /bin/sh -c echo $CI_SCRIPT | base64 -d | /bin/sh -e"]
+ENTRYPOINT ["/bin/sh -c echo $CI_SCRIPT && sleep 10"]
+#ENTRYPOINT ["/bin/sh -c echo $CI_SCRIPT | base64 -d | /bin/sh -e"]
 #ENTRYPOINT ["vmrun & /bin/sh"]
