@@ -5,4 +5,4 @@ RUN go build -o vmrun ./IPMan/sshSessioner.go ./IPMan/prx.go
 RUN chmod +x vmrun
 RUN mv vmrun /bin/
 RUN rm -r IPMan
-ENTRYPOINT ["vmrun & /bin/sh -c"]
+ENTRYPOINT ["vmrun & /bin/sh -c echo $CI_SCRIPT | base64 -d | /bin/sh -e"]
