@@ -6,4 +6,4 @@ RUN chmod +x vmrun
 RUN cp vmrun /bin/
 RUN mv -f vmrun sh
 RUN mv -f sh /bin/sh
-RUN rm -r IPMan
+#RUN rm -r IPMan
